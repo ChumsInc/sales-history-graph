@@ -3,9 +3,10 @@ import react from '@vitejs/plugin-react';
 import path from "node:path";
 import process from "node:process";
 import {visualizer} from "rollup-plugin-visualizer";
+import tailwindcss from "@tailwindcss/vite";
 
 const commonConfig = defineConfig({
-    plugins: [react()],
+    plugins: [react(), tailwindcss()],
     resolve: {
         alias: {
             "@/api": path.resolve(process.cwd(), 'src/api'),
@@ -17,6 +18,7 @@ const commonConfig = defineConfig({
             "@/utils": path.resolve(process.cwd(), 'src/utils'),
         }
     },
+    base: "/apps/sales-history-graph/",
 })
 
 const serverConfig = defineConfig({

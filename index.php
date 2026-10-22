@@ -11,10 +11,11 @@ use chums\ui\JSOptions;
 use chums\user\Groups;
 
 require_once "autoload.inc.php";
+
 $ui = new WebUI2([
-    "contentFile" => "body.inc.php",
+    "contentFile" => "body.php",
     "requiredRoles" => [Groups::SALES],
-    "title" => "App Name"
+    "title" => "Sales History Graph"
 ]);
 
 $ui->addViteManifest()
